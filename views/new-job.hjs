@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Jobby | Trouvez un emploi</title>
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
-  {{! {{ css('https://unpkg.com/spectre.css/dist/spectre.min.css') }} {{! css('https://unpkg.com/spectre.css/dist/spectre-exp.min.css')}}
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /> {{! {{ css('https://unpkg.com/spectre.css/dist/spectre.min.css') }} {{! css('https://unpkg.com/spectre.css/dist/spectre-exp.min.css')}}
   {{! css('https://unpkg.com/spectre.css/dist/spectre-icons.min.css') }}
   <link rel="stylesheet" href="spectre/spectre.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,7 +24,7 @@
             </a>
           </section>
           <section class="navbar-section">
-            <a href="#" class="navbar-brand mb-1 btn btn-primary" style="font-size: .8rem;">Publier une annonce</a>
+            <a href="#" class="navbar-brand mb-1 btn btn-primary" style="font-size: .8rem;">Publier une offre</a>
           </section>
         </header>
       </div>
@@ -34,7 +33,7 @@
 
   <div class="container">
     <div class="columns" style="margin-top: 1.8rem; margin-left: 3.5%; margin-right: 5%;">
-      <div class="column col-6 col-mx-auto">
+      <div class="column col-6  col-xs-12 col-md-10 col-xl-8 col-mx-auto">
         <h3>Que cherchez-vous ?</h3>
         <div class="divider"></div>
         <form action="/new" method="post" enctype="multipart/form-data" class="form-group" style="margin-top: 1rem; margin-bottom: 5rem">
@@ -54,30 +53,24 @@
             rows="8"></textarea>
           <label class="form-label" for="input-example-1">Lieu de travail</label>
           <input class="form-input" name="location" type="text" placeholder="Ex: Accra, Ghana" required>
-          <label class="form-label" for="input-example-1">Salaire</label>
           <div class="columns">
-            <div class="column col-7">
-              <div class="d-flex">
-                <div>
-                  <div class="input-group">
-                    <input type="number" name="min_salary" class="form-input" placeholder="100" required>
-                    <span class="input-group-addon"> ,000</span>
-                  </div>
-                </div>
-                <div class="mt-1 mx-2">
-                  <p class="text-bold">&mdash;</p>
-                </div>
-                <div>
-                  <div class="input-group">
-                    <input type="number" name="max_salary" class="form-input" placeholder="120" required>
-                    <span class="input-group-addon"> ,000</span>
-                  </div>
-                </div>
-                <div class="mt-1 mx-2 h5">(FCFA)</div>
+            <div class="column col-3 col-xs-6 mt-2">
+              <p class="mb-1">Salaire min.</p>
+              <div class="input-group ">
+                <input type="number" name="min_salary" class="form-input" placeholder="100" required>
+                <span class="input-group-addon"> ,000</span>
               </div>
             </div>
           </div>
-
+          <div class="columns">
+            <div class="column col-3 col-xs-6 mt-2">
+              <p class="mb-1">Salaire max.</p>
+              <div class="input-group">
+                <input type="number" name="max_salary" class="form-input" placeholder="120" required>
+                <span class="input-group-addon"> ,000</span>
+              </div>
+            </div>
+          </div>
           <h3 style="margin-top: 1rem">Qui êtes-vous ?</h3>
           <div class="divider"></div>
           <label class="form-label" for="input-example-1">Nom et Prénom</label>
@@ -87,7 +80,8 @@
           <label class="form-label" for="input-example-1">Nom de l'entreprise</label>
           <input class="form-input" name="company_name" type="text" placeholder="Ex: Airdnd" required>
           <label class="form-label" for="input-example-1">Description de l'entreprise</label>
-          <textarea class="form-input" name="company_description" placeholder="Qui êtes-vous ? Que fait votre entreprise ?" rows="3" required></textarea>
+          <textarea class="form-input" name="company_description" placeholder="Qui êtes-vous ? Que fait votre entreprise ?" rows="3"
+            required></textarea>
           <label class="form-label" for="input-example-1">Logo de l'entreprise</label>
           <input class="form-input" name="company_logo" type="file" placeholder="Ex: Airdnd" required>
           <label class="form-label" for="input-example-1">Adresse mail de soumission de CV</label>
