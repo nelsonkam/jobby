@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jobby | Aperçu de l'offre</title>
+  {{! {{ css('https://unpkg.com/spectre.css/dist/spectre.min.css') }} {{! css('https://unpkg.com/spectre.css/dist/spectre-exp.min.css')}}
+  {{! css('https://unpkg.com/spectre.css/dist/spectre-icons.min.css') }}
+  <link rel="stylesheet" href="spectre/spectre.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href='style.css'>
+</head>
+
+<body>
+  <div class="container shadow-bottom" style="margin-top: .375rem; margin-bottom: .375rem;">
+    <div class="columns">
+      <div class="column col-12 col-mx-auto">
+        <header class="navbar" style="margin-left: 3%; margin-right: 3%;">
+          <section class="navbar-section">
+            <a href="/" class="navbar-brand">
+              <img src="jobby_purpled.png" class="mt-1" style="height: 42px;" alt="Logo">
+            </a>
+          </section>
+          <section class="navbar-section">
+            <a href="#" class="navbar-brand mb-1 btn btn-primary" style="font-size: .8rem;">Publier une annonce</a>
+          </section>
+        </header>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="columns" style="margin-top: 1.8rem; margin-left: 3.5%; margin-right: 5%;">
+      <div class="column col-6 col-mx-auto">
+        <h3>Aperçu de l'offre</h3>
+        <div class="divider"></div>
+        <div class="role-desc">
+    <div class="columns">
+      <div class="column col-7">
+        <h4 class="text-gray">Description du role</h4>
+        <div class="columns" style="margin-top: 1.5rem;">
+          <div class="column col-1 mr-2 mt-1">
+            <figure class="avatar avatar-xl">
+              <img src="{{ company_logo }}" alt="Logo">
+            </figure>
+          </div>
+          <div class="column ml-2">
+            <div class="h5">{{position}}</div>
+            <div class="text-gray">{{company_name}} &ndash; {{location}}</div>
+            <div class="text-bold">{{min_salary}}k-{{max_salary}}k FCFA</div>
+          </div>
+        </div>
+        <p style="margin-top: 1rem;">{{company_description}}</p>
+        <h4>Compétences & Pré-requis</h4>
+        <ul>
+          {{#profile}}
+            <li>{{.}}</li>
+          {{/profile}}
+        </ul>
+        <h4>Responsabilités</h4>
+        <ul>
+         {{#responsabilities}}
+            <li>{{.}}</li>
+          {{/responsabilities}}
+        </ul>
+        <h4>Avantages</h4>
+        <ul>
+          {{#benefits}}
+            <li>{{.}}</li>
+          {{/benefits}}
+        </ul>
+        <h4>Tags</h4>
+        <div class="d-flex">
+          <span class="label p-2 mx-1 label-rounded">UI/UX</span>
+          <span class="label p-2 mx-1 label-rounded">JavaScript</span>
+          <span class="label p-2 mx-1 label-rounded">Airbnb</span>
+        </div>
+        <div style="margin-top: 2rem;"></div>
+      </div>
+       <div class="column col-4 col-ml-auto" style="padding-left: 4rem;">
+        
+        <button class="btn btn-primary btn-lg" style="margin-bottom: 1.5rem;">Postuler à cette offre</button>
+        
+      </div>
+    </div>
+  </div>
+        
+        
+        
+        {{!-- <form action="/new" method="post" enctype="multipart/form-data" class="form-group" style="margin-top: 1rem; margin-bottom: 5rem">
+          <label class="form-label" for="input-example-1">Poste</label>
+          <input class="form-input" name="position" type="text" placeholder="Ex: Développeur Mobile">
+          <label class="form-label" for="input-example-1">Description</label>
+          <input class="form-input" name="description" type="text" placeholder="Courte description de ce que vous recherchez">
+
+          <label class="form-label" for="input-example-1">Compétences & Pré-requis</label>
+          <textarea class="form-input" name="profile" placeholder="Quel profile recherchez-vous ? &#10;(Mettez chacune des compétences/pré-requis sur une ligne) &#10;&#10;Exemple: &#10;&#10;2 à 3 ans d'expérience dans le développement d'application Android/iOS &#10;Maitrise les langages Java, Swift et Kotlin &#10;Doté d'un Bac +2/3 en informatique "
+            rows="8"></textarea>
+          <label class="form-label" for="input-example-1">Responsabilités</label>
+          <textarea class="form-input" name="responsabilities" placeholder="En quoi consistera ce role ? &#10;(Mettez chacune des compétences/pré-requis sur une ligne) &#10;&#10;Exemple: &#10;&#10;Assister au développement d'application Android/iOS &#10;Participer à la maintenance d'applications existantes"
+            rows="8"></textarea>
+          <label class="form-label" for="input-example-1">Avantages</label>
+          <textarea class="form-input" name="benefits" placeholder="Quels avantages proposez-vous ? &#10;(Mettez chacune des compétences/pré-requis sur une ligne) &#10;&#10;Exemple: &#10;&#10;Equipements de pointe &#10;Sécurité sociale"
+            rows="8"></textarea>
+          <label class="form-label" for="input-example-1">Lieu de travail</label>
+          <input class="form-input" name="location" type="text" placeholder="Ex: Accra, Ghana">
+          <label class="form-label" for="input-example-1">Salaire</label>
+          <div class="columns">
+            <div class="column col-7">
+              <div class="d-flex">
+                <div>
+                  <div class="input-group">
+                    <input type="number" name="min_salary" class="form-input" placeholder="100">
+                    <span class="input-group-addon"> ,000</span>
+                  </div>
+                </div>
+                <div class="mt-1 mx-2">
+                  <p class="text-bold">&mdash;</p>
+                </div>
+                <div>
+                  <div class="input-group">
+                    <input type="number" name="max_salary" class="form-input" placeholder="120">
+                    <span class="input-group-addon"> ,000</span>
+                  </div>
+                </div>
+                <div class="mt-1 mx-2 h5">(FCFA)</div>
+              </div>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 1rem">Qui êtes-vous ?</h3>
+          <div class="divider"></div>
+          <label class="form-label" for="input-example-1">Nom et Prénom</label>
+          <input class="form-input" name="recruter_name" type="text" placeholder="Ex: Jacques Kuassi">
+          <label class="form-label" for="input-example-1">Addresse mail</label>
+          <input class="form-input" name="recruter_email" type="email" placeholder="Ex: Airdnd">
+          <label class="form-label" for="input-example-1">Nom de l'entreprise</label>
+          <input class="form-input" name="company_name" type="text" placeholder="Ex: Airdnd">
+          <label class="form-label" for="input-example-1">Description de l'entreprise</label>
+          <textarea class="form-input" name="company_description" placeholder="Qui êtes-vous ? Que fait votre entreprise ?" rows="3"></textarea>
+          <label class="form-label" for="input-example-1">Logo de l'entreprise</label>
+          <input class="form-input" name="company_logo" type="file" placeholder="Ex: Airdnd">
+          <label class="form-label" for="input-example-1">Email de soumission de CV</label>
+          <input class="form-input" name="submission_email" type="email" placeholder="Ex: careers@airdnd.com">
+          <input type="submit" value="Publier" class="btn btn-primary mt-2 p-2" style="margin-top: 1rem; padding-left: 1rem; padding-right: 1rem;">
+          <a href="/" class="btn mt-2" style="margin-top: 1rem; padding-left: 1rem; padding-right: 1rem;">Annuler</a>
+        </form> --}}
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

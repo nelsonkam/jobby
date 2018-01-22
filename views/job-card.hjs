@@ -1,0 +1,32 @@
+<div class="card-container column col-3 col-xs-12 col-md-6 col-xl-4 mb-2">
+  <a href="/jobs/{{id}}">
+    <div class="card">
+      <div class="card-header">
+        <div class="columns">
+          <div class="column col-2 mr-1">
+            <figure class="avatar avatar-lg">
+              <img src="/{{ company_logo }}" alt="Logo">
+            </figure>
+          </div>
+          <div class="column ml-2">
+            <div class="card-title h5">{{position}}</div>
+            <div class="card-subtitle text-gray">{{company_name}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>{{description}}</p>
+        <div class="columns">
+          <div class="column">
+            <p class="text-bold mb-1 text-uppercase">Lieu</p>
+            <p class="text-gray">{{location}}</p>
+          </div>
+          <div class="column">
+            <p class="text-bold mb-1 text-uppercase">Salaire</p>
+            <p class="text-gray">{{min_salary}}k-{{max_salary}}k (FCFA)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

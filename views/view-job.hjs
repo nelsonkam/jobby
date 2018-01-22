@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jobby | {{position}} à {{company_name}}</title>
+  <meta name="description" content="{{description}}">
+
+  <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="{{position}} à {{company_name}}">
+  <meta itemprop="description" content="{{description}}">
+  <meta itemprop="image" content="/media.png">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://jobby.africa">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{position}} à {{company_name}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:image" content="/media.png">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{position}} à {{company_name}}">
+  <meta name="twitter:description" content="{{description}}">
+  <meta name="twitter:image" content="/media.png"> {{! {{ css('https://unpkg.com/spectre.css/dist/spectre.min.css') }} {{! css('https://unpkg.com/spectre.css/dist/spectre-exp.min.css')}}
+  {{! css('https://unpkg.com/spectre.css/dist/spectre-icons.min.css') }}
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+  <link rel="stylesheet" href="/spectre/spectre.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href='/style.css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.js"></script>
+</head>
+
+<body>
+  <div class="container" style="margin-top: .375rem; margin-bottom: .375rem;">
+    <div class="columns">
+      <div class="column col-12 col-mx-auto">
+        <header class="navbar" style="margin-left: 3%; margin-right: 3%;">
+          <section class="navbar-section">
+            <a href="/" class="navbar-brand">
+              <img src="/jobby_purpled.png" class="mt-1" style="height: 42px;" alt="Logo">
+            </a>
+          </section>
+          <section class="navbar-section">
+            <a href="/new" class="navbar-brand mb-1 btn btn-primary" style="font-size: .8rem;">Publier une annonce</a>
+          </section>
+        </header>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="job-hero">
+      <h1 style="margin-bottom: 0">{{position}}</h1>
+      <div class="d-flex">
+        <h1 style="font-weight: 300;">à</h1> &nbsp;&nbsp;
+        <h1>{{company_name}}</h1>
+      </div>
+      <div class="columns">
+        <div class="column col-5 col-md-6 col-sm-12">
+          <h5>{{description}}</h5>
+        </div>
+      </div>
+      <a class="btn btn-lg" href="#modal-apply" style="margin-top: 1rem;">Postuler à cette offre</a>
+    </div>
+    <div class="role-desc">
+      <div class="columns">
+        <div class="column col-7 col-sm-12">
+          <h4 class="text-gray">Description du role</h4>
+          <div class="columns" style="margin-top: 1.5rem;">
+            <div class="column col-1 col-md-2 mr-2 mt-1">
+              <figure class="avatar avatar-xl">
+                <img src="/{{ company_logo }}" alt="Logo">
+              </figure>
+            </div>
+            <div class="column ml-2">
+              <div class="h5">{{position}}</div>
+              <div class="text-gray">{{company_name}} &ndash; {{location}}</div>
+              <div class="text-bold">{{min_salary}}k-{{max_salary}}k FCFA</div>
+            </div>
+          </div>
+          <p style="margin-top: 1rem;">{{company_description}}</p>
+          <h4>Compétences & Pré-requis</h4>
+          <ul>
+            {{#profile}}
+            <li>{{.}}</li>
+            {{/profile}}
+          </ul>
+          <h4>Responsabilités</h4>
+          <ul>
+            {{#responsabilities}}
+            <li>{{.}}</li>
+            {{/responsabilities}}
+          </ul>
+          <h4>Avantages</h4>
+          <ul>
+            {{#benefits}}
+            <li>{{.}}</li>
+            {{/benefits}}
+          </ul>
+          {{!-- <h4>Tags</h4>
+          <div class="d-flex">
+            <span class="label p-2 mx-1 label-rounded">UI/UX</span>
+            <span class="label p-2 mx-1 label-rounded">JavaScript</span>
+            <span class="label p-2 mx-1 label-rounded">Airbnb</span>
+          </div> --}}
+          <div style="margin-top: 3rem;"></div>
+        </div>
+        <div class="role-desc-right-column column col-4 col-sm-12 col-ml-auto">
+
+          <a href="#modal-apply" class="btn btn-primary btn-lg" style="margin-bottom: 1.5rem;">Postuler à cette offre</a>
+          <h5 class="text-gray mb-2">Partagez l'offre</h5>
+          <div class="d-flex" style="margin-bottom: 1.5rem;">
+            <a class="btn btn-action p-2 mx-1 circle" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjobby.africa%2Fjobs%2F1h23939jdjddj"
+              target="_blank" style="background-color: #3B5998; color: white; border: none;">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-action p-2 mx-1 circle" href="https://twitter.com/intent/tweet/?text=Jette%20un%20coup%20d&#x27;oeil%20%C3%A0%20cette%20offre%20sur%20Jobby&amp;url=https%3A%2F%2Fjobby.africa%2Fjobs%2F{{id}}"
+              style="background-color: #1da1f2; color: white; border: none;">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-action p-2 mx-1 circle" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fjobby.africa%2Fjobs%2F{{id}}&amp;title=Jette%20un%20coup%20d&#x27;oeil%20%C3%A0%20cette%20offre%20sur%20Jobby&amp;summary=Jette%20un%20coup%20d&#x27;oeil%20%C3%A0%20cette%20offre%20sur%20Jobby&amp;source=https%3A%2F%2Fjobby.africa%2Fjobs%2F{{id}}"
+              style="background-color: #00a0dc; color: white; border: none;">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-action p-2 mx-1 circle" href="whatsapp://send?text=Jette%20un%20coup%20d&#x27;oeil%20%C3%A0%20cette%20offre%20sur%20Jobby%20https%3A%2F%2Fjobby.africa%2Fjobs%2F{{id}}"
+              style="background-color: #25d366; color: white; border: none;">
+              <i class="fa fa-whatsapp" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-action p-2 mx-1 circle" href="mailto:?subject=Jette%20un%20coup%20d&#x27;oeil%20%C3%A0%20cette%20offre%20sur%20Jobby&amp;body=https%3A%2F%2Fjobby.africa%2Fjobs%2F{{id}}"
+              style="background-color: #c7c8ca; color: white; border: none;">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </a>
+          </div>
+          {{!--
+          <h4 class="text-gray mb-2">Offres similaires</h4>
+          <div class="offre">
+            <p class="text-bold h5 mb-0">Software Engineer</p>
+            <p>Airbnb &ndash; Cotonou, Benin</p>
+          </div>
+          <div class="offre">
+            <p class="text-bold h5 mb-0">Software Engineer</p>
+            <p>Airbnb &ndash; Cotonou, Benin</p>
+          </div>
+          <div class="offre">
+            <p class="text-bold h5 mb-0">Software Engineer</p>
+            <p>Airbnb &ndash; Cotonou, Benin</p>
+          </div> --}}
+          <p class="mb-1 text-bold text-gray">Cherchez-vous une récrue ?</p>
+          <a href="/new">Publier une offre</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modal-apply">
+    <a href="#close" class="modal-overlay" aria-label="Close"></a>
+    <div class="modal-container">
+      <div class="modal-header">
+        <a href="#close" class="btn btn-clear float-right" aria-label="Close"></a>
+        <div class="modal-title h4">Plus qu'une étape !</div>
+      </div>
+      <div class="modal-body">
+        <div class="content">
+          <p>Soumettez votre CV à l'adresse mail ci-dessus: </p>
+          <div class="input-group">
+            <input id="submission-email" type="text" class="form-input" value="{{submission_email}}" readonly>
+            <button id="copy-btn" class="btn btn-primary input-group-btn" data-clipboard-target="#submission-email">Copier</button>
+          </div>
+        </div>
+        <p id="copy-success" class="mt-2" style="margin-top: 1rem" hidden>✅ &nbsp;Adresse copiée avec succés !</p>
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+  <script>
+    var clipboard = new Clipboard('#copy-btn');
+
+    clipboard.on('success', function(e) {
+        $('#copy-success').show()
+        $(".modal-footer").hide()
+        e.clearSelection();
+    });
+  </script>
+</body>
+
+</html>

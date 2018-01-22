@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jobby | Trouvez un emploi</title>
+  <meta name="description" content="{{description}}">
+
+  <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="Jobby | Trouvez un emploi">
+  <meta itemprop="description" content="Cherchez et trouvez votre prochain emploi parmis des offres provenant de toute l'Afrique de l'Ouest.">
+  <meta itemprop="image" content="/media.png">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://jobby.africa">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jobby | Trouvez un emploi">
+  <meta property="og:description" content="Cherchez et trouvez votre prochain emploi parmis des offres provenant de toute l'Afrique de l'Ouest.">
+  <meta property="og:image" content="/media.png">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jobby | Trouvez un emploi">
+  <meta name="twitter:description" content="Cherchez et trouvez votre prochain emploi parmis des offres provenant de toute l'Afrique de l'Ouest.">
+  <meta name="twitter:image" content="/media.png">
+  {{! 
+  {{ css('https://unpkg.com/spectre.css/dist/spectre.min.css') }} 
+  {{! css('https://unpkg.com/spectre.css/dist/spectre-exp.min.css')}} 
+  {{! css('https://unpkg.com/spectre.css/dist/spectre-icons.min.css') }}  
+  <link rel="stylesheet" href="spectre/spectre.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href='style.css'>
+</head>
+
+<body>
+  <div class="container shadow-bottom" style="margin-top: .375rem; margin-bottom: .375rem;">
+    <div class="columns">
+      <div class="column col-11 col-mx-auto">
+        <header class="navbar">
+          <section class="navbar-section">
+            <a href="/" class="navbar-brand m-2"><img src="/jobby_purpled.png" class="mt-1" style="height: 42px;" alt="Logo"></a>
+          </section>
+          <section class="navbar-section">
+            <a href="/new" class="navbar-brand m-2 btn btn-primary" style="font-size: .8rem;">Publier une offre</a>
+          </section>
+        </header>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="columns" style="margin-top: .5rem; margin-left: 5%; margin-right: 5%;">
+  <div class="column col-12">
+  <p class="h3 hide-xs">Trouvez votre prochain emploi</p>    
+  <p class="h4 text-center show-xs">Trouvez votre prochain emploi</p>
+  </div>    
+  <div class="column col-12 col-mx-auto">
+    <div class="columns">
+      {{#jobs}}
+        {{>job-card}}
+      {{/jobs}}
+      {{^jobs}}
+          <div class="column col-12" style="height: 100%;">
+            <div class="empty" style="background-color: white;">
+              <p class="empty-title h3">Aucune offre n'a été retrouvée.</p>
+            </div>
+          </div>
+        {{/jobs}}
+    </div>
+  </div>
+  </div>
+  </div>
+  <footer class="shadow-top hide-sm">
+    <div class="d-flex" style="justify-content: center; flex-wrap: wrap">
+      <p class="mt-1 mx-2 mb-2 h6">Tenez-moi informé(e) s'il y a de nouvelles offres</p>
+      <form action="/subscribe" method="post" class="form-group d-flex">
+        <input class="form-input mx-1" name="name" type="text" placeholder="Nom et Prénom" required>
+        <input class="form-input mx-1" name="email" type="email" placeholder="Adresse mail" required>
+        <input type="submit" value="Souscrire" class="btn btn-primary p-2">
+      </form>
+    </div>
+  </footer>
+</body>
+
+</html>

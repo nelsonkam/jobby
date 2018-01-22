@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jobby | Trouvez un emploi</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+  {{! {{ css('https://unpkg.com/spectre.css/dist/spectre.min.css') }} {{! css('https://unpkg.com/spectre.css/dist/spectre-exp.min.css')}}
+  {{! css('https://unpkg.com/spectre.css/dist/spectre-icons.min.css') }}
+  <link rel="stylesheet" href="spectre/spectre.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href='style.css'>
+</head>
+
+<body>
+  <div class="container shadow-bottom" style="margin-top: .375rem; margin-bottom: .375rem;">
+    <div class="columns">
+      <div class="column col-12 col-mx-auto">
+        <header class="navbar" style="margin-left: 3%; margin-right: 3%;">
+          <section class="navbar-section">
+            <a href="/" class="navbar-brand">
+              <img src="jobby_purpled.png" class="mt-1" style="height: 42px;" alt="Logo">
+            </a>
+          </section>
+          <section class="navbar-section">
+            <a href="#" class="navbar-brand mb-1 btn btn-primary" style="font-size: .8rem;">Publier une annonce</a>
+          </section>
+        </header>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="columns" style="margin-top: 1.8rem; margin-left: 3.5%; margin-right: 5%;">
+      <div class="column col-6 col-mx-auto">
+        <h3>Que cherchez-vous ?</h3>
+        <div class="divider"></div>
+        <form action="/new" method="post" enctype="multipart/form-data" class="form-group" style="margin-top: 1rem; margin-bottom: 5rem">
+          <label class="form-label" for="input-example-1">Poste</label>
+          <input class="form-input" name="position" type="text" placeholder="Ex: Développeur Mobile" required>
+          <label class="form-label" for="input-example-1">Description</label>
+          <input class="form-input" name="description" type="text" placeholder="Courte description de ce que vous recherchez" required>
+
+          <label class="form-label" for="input-example-1">Compétences & Pré-requis</label>
+          <textarea class="form-input" name="profile" placeholder="Quel profile recherchez-vous ? &#10;(Mettez chacune des compétences/pré-requis sur une ligne) &#10;&#10;Exemple: &#10;&#10;2 à 3 ans d'expérience dans le développement d'application Android/iOS &#10;Maitrise les langages Java, Swift et Kotlin &#10;Doté d'un Bac +2/3 en informatique "
+            rows="8" required></textarea>
+          <label class="form-label" for="input-example-1">Responsabilités</label>
+          <textarea class="form-input" name="responsabilities" placeholder="En quoi consistera ce role ? &#10;(Mettez chacune des compétences/pré-requis sur une ligne) &#10;&#10;Exemple: &#10;&#10;Assister au développement d'application Android/iOS &#10;Participer à la maintenance d'applications existantes"
+            rows="8" required></textarea>
+          <label class="form-label" for="input-example-1">Avantages</label>
+          <textarea class="form-input" name="benefits" placeholder="Quels avantages proposez-vous ? &#10;(Mettez chacune des compétences/pré-requis sur une ligne) &#10;&#10;Exemple: &#10;&#10;Equipements de pointe &#10;Sécurité sociale"
+            rows="8"></textarea>
+          <label class="form-label" for="input-example-1">Lieu de travail</label>
+          <input class="form-input" name="location" type="text" placeholder="Ex: Accra, Ghana" required>
+          <label class="form-label" for="input-example-1">Salaire</label>
+          <div class="columns">
+            <div class="column col-7">
+              <div class="d-flex">
+                <div>
+                  <div class="input-group">
+                    <input type="number" name="min_salary" class="form-input" placeholder="100" required>
+                    <span class="input-group-addon"> ,000</span>
+                  </div>
+                </div>
+                <div class="mt-1 mx-2">
+                  <p class="text-bold">&mdash;</p>
+                </div>
+                <div>
+                  <div class="input-group">
+                    <input type="number" name="max_salary" class="form-input" placeholder="120" required>
+                    <span class="input-group-addon"> ,000</span>
+                  </div>
+                </div>
+                <div class="mt-1 mx-2 h5">(FCFA)</div>
+              </div>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 1rem">Qui êtes-vous ?</h3>
+          <div class="divider"></div>
+          <label class="form-label" for="input-example-1">Nom et Prénom</label>
+          <input class="form-input" name="recruter_name" type="text" placeholder="Ex: Jacques Kuassi" required>
+          <label class="form-label" for="input-example-1">Adresse mail</label>
+          <input class="form-input" name="recruter_email" type="email" placeholder="Ex: Airdnd" required>
+          <label class="form-label" for="input-example-1">Nom de l'entreprise</label>
+          <input class="form-input" name="company_name" type="text" placeholder="Ex: Airdnd" required>
+          <label class="form-label" for="input-example-1">Description de l'entreprise</label>
+          <textarea class="form-input" name="company_description" placeholder="Qui êtes-vous ? Que fait votre entreprise ?" rows="3" required></textarea>
+          <label class="form-label" for="input-example-1">Logo de l'entreprise</label>
+          <input class="form-input" name="company_logo" type="file" placeholder="Ex: Airdnd" required>
+          <label class="form-label" for="input-example-1">Adresse mail de soumission de CV</label>
+          <input class="form-input" name="submission_email" type="email" placeholder="Ex: careers@airdnd.com" required>
+          <p class="text-bold mt-2 mb-2">⚠️ Une fois publiée, vous ne pourrez plus modifier votre offre.</p>
+          <input type="submit" value="Publier" class="btn btn-primary mt-2 p-2" style="padding-left: 1rem; padding-right: 1rem;">
+          <a href="/" class="btn mt-2" style="padding-left: 1rem; padding-right: 1rem;">Annuler</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
