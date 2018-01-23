@@ -46,10 +46,10 @@
           <textarea class="form-input" name="profile" placeholder="Quel profile recherchez-vous ? &#10;(Mettez chacune des compétences/pré-requis sur une ligne) &#10;&#10;Exemple: &#10;&#10;2 à 3 ans d'expérience dans le développement d'application Android/iOS &#10;Maitrise les langages Java, Swift et Kotlin &#10;Doté d'un Bac +2/3 en informatique "
             rows="8" required></textarea>
           <label class="form-label" for="input-example-1">Responsabilités</label>
-          <textarea class="form-input" name="responsabilities" placeholder="En quoi consistera ce role ? &#10;(Mettez chacune des compétences/pré-requis sur une ligne) &#10;&#10;Exemple: &#10;&#10;Assister au développement d'application Android/iOS &#10;Participer à la maintenance d'applications existantes"
+          <textarea class="form-input" name="responsabilities" placeholder="En quoi consistera ce role ? &#10;(Mettez chacune des responsabilités sur une ligne) &#10;&#10;Exemple: &#10;&#10;Assister au développement d'application Android/iOS &#10;Participer à la maintenance d'applications existantes"
             rows="8" required></textarea>
           <label class="form-label" for="input-example-1">Avantages</label>
-          <textarea class="form-input" name="benefits" placeholder="Quels avantages proposez-vous ? &#10;(Mettez chacune des compétences/pré-requis sur une ligne) &#10;&#10;Exemple: &#10;&#10;Equipements de pointe &#10;Sécurité sociale"
+          <textarea class="form-input" name="benefits" placeholder="Quels avantages proposez-vous ? &#10;(Mettez chaque avantage sur une ligne) &#10;&#10;Exemple: &#10;&#10;Equipements de pointe &#10;Sécurité sociale"
             rows="8"></textarea>
           <label class="form-label" for="input-example-1">Lieu de travail</label>
           <input class="form-input" name="location" type="text" placeholder="Ex: Accra, Ghana" required>
