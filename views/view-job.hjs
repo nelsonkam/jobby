@@ -100,12 +100,6 @@
             <li>{{.}}</li>
             {{/benefits}}
           </ul>
-          {{!-- <h4>Tags</h4>
-          <div class="d-flex">
-            <span class="label p-2 mx-1 label-rounded">UI/UX</span>
-            <span class="label p-2 mx-1 label-rounded">JavaScript</span>
-            <span class="label p-2 mx-1 label-rounded">Airbnb</span>
-          </div> --}}
           <div style="margin-top: 3rem;"></div>
         </div>
         <div class="role-desc-right-column column col-4 col-sm-12 col-ml-auto">
@@ -134,20 +128,7 @@
               <i class="fa fa-envelope" aria-hidden="true"></i>
             </a>
           </div>
-          {{!--
-          <h4 class="text-gray mb-2">Offres similaires</h4>
-          <div class="offre">
-            <p class="text-bold h5 mb-0">Software Engineer</p>
-            <p>Airbnb &ndash; Cotonou, Benin</p>
-          </div>
-          <div class="offre">
-            <p class="text-bold h5 mb-0">Software Engineer</p>
-            <p>Airbnb &ndash; Cotonou, Benin</p>
-          </div>
-          <div class="offre">
-            <p class="text-bold h5 mb-0">Software Engineer</p>
-            <p>Airbnb &ndash; Cotonou, Benin</p>
-          </div> --}}
+        
           <p class="mb-1 text-bold text-gray">Cherchez-vous une récrue ?</p>
           <a href="/new">Publier une offre</a>
         </div>
