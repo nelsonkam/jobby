@@ -18,12 +18,12 @@
         <p>{{description}}</p>
         <div class="columns">
           <div class="column">
-            <p class="text-bold mb-1 text-uppercase">Lieu</p>
+            <p class="text-bold mb-1 text-uppercase">Location</p>
             <p class="text-gray">{{location}}</p>
           </div>
           <div class="column">
-            <p class="text-bold mb-1 text-uppercase">Salaire</p>
-            <p class="text-gray">{{min_salary}}k-{{max_salary}}k (FCFA)</p>
+            <p class="text-bold mb-1 text-uppercase">Salary</p>
+            <p class="text-gray">{{min_salary}}k-{{max_salary}}k (USD)</p>
           </div>
         </div>
       </div>

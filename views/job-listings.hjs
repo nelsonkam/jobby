@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Jobby | Trouvez un emploi</title>
+  <title>Jobby | Find a Job</title>
   <meta name="description" content="{{description}}">
 
   <!-- Google / Search Engine Tags -->
@@ -25,10 +25,7 @@
   <meta name="twitter:title" content="Jobby | Trouvez un emploi">
   <meta name="twitter:description" content="Cherchez et trouvez votre prochain emploi parmis des offres provenant de toute l'Afrique de l'Ouest.">
   <meta name="twitter:image" content="/media.png">
-  {{! 
-  {{ css('https://unpkg.com/spectre.css/dist/spectre.min.css') }} 
-  {{! css('https://unpkg.com/spectre.css/dist/spectre-exp.min.css')}} 
-  {{! css('https://unpkg.com/spectre.css/dist/spectre-icons.min.css') }}  
+    
   <link rel="stylesheet" href="spectre/spectre.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href='style.css'>
@@ -43,7 +40,7 @@
             <a href="/" class="navbar-brand m-2"><img src="/jobby_purpled.png" class="mt-1" style="height: 42px;" alt="Logo"></a>
           </section>
           <section class="navbar-section">
-            <a href="/new" class="navbar-brand m-2 btn btn-primary" style="font-size: .8rem;">Publier une offre</a>
+            <a href="/new" class="navbar-brand m-2 btn btn-primary" style="font-size: .8rem;">Post a job</a>
           </section>
         </header>
       </div>
@@ -53,8 +50,8 @@
   <div class="container">
     <div class="columns" style="margin-top: .5rem; margin-left: 5%; margin-right: 5%;">
   <div class="column col-12">
-  <p class="h3 hide-xs">Trouvez votre prochain emploi</p>    
-  <p class="h4 text-center show-xs">Trouvez votre prochain emploi</p>
+  <p class="h3 hide-xs">Find your next job</p>    
+  <p class="h4 text-center show-xs">Find your next job</p>
   </div>    
   <div class="column col-12 col-mx-auto">
     <div class="columns">
@@ -64,7 +61,7 @@
       {{^jobs}}
           <div class="column col-12" style="height: 100%;">
             <div class="empty" style="background-color: white;">
-              <p class="empty-title h3">Aucune offre n'a été retrouvée.</p>
+              <p class="empty-title h3">No job offer found.</p>
             </div>
           </div>
         {{/jobs}}
@@ -74,11 +71,11 @@
   </div>
   <footer class="shadow-top hide-sm">
     <div class="d-flex" style="justify-content: center; flex-wrap: wrap">
-      <p class="mt-1 mx-2 mb-2 h6">Tenez-moi informé(e) s'il y a de nouvelles offres</p>
+      <p class="mt-1 mx-2 mb-2 h6">Keep me updated when there are new offers</p>
       <form action="/subscribe" method="post" class="form-group d-flex">
-        <input class="form-input mx-1" name="name" type="text" placeholder="Nom et Prénom" required>
-        <input class="form-input mx-1" name="email" type="email" placeholder="Adresse mail" required>
-        <input type="submit" value="Souscrire" class="btn btn-primary p-2">
+        <input class="form-input mx-1" name="name" type="text" placeholder="Name" required>
+        <input class="form-input mx-1" name="email" type="email" placeholder="Email Address" required>
+        <input type="submit" value="Subscribe" class="btn btn-primary p-2">
       </form>
     </div>
   </footer>

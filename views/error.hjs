@@ -1,3 +1,22 @@
-<h1>{{ message }}</h1>
-<h2>{{ error.status }}</h2>
-<pre>{{ error.stack }}</pre>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jobby | Find a job</title>
+  <link rel="stylesheet" href="spectre/spectre.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href='style.css'>
+</head>
+<body style="margin-left: 5%; margin-top: 5%;">
+  <h3>Something went wrong</h3>
+  <p class="mb-2">{{ message }}</p>
+  <a href="/">Go back home</a>
+  <h2>{{ error.status }}</h2>
+  <pre>{{ error.stack }}</pre>
+</body>
+</html>
+
+

@@ -5,18 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Jobby | Trouvez un emploi</title>
-  {{! 
-  {{ css('https://unpkg.com/spectre.css/dist/spectre.min.css') }} 
-  {{! css('https://unpkg.com/spectre.css/dist/spectre-exp.min.css')}} 
-  {{! css('https://unpkg.com/spectre.css/dist/spectre-icons.min.css') }}  
+  <title>Jobby | Find a job</title>
   <link rel="stylesheet" href="spectre/spectre.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href='style.css'>
 </head>
 <body style="margin-left: 5%; margin-top: 5%;">
-  <h3>Vous avez été souscrit avec succès !</h3>
-  <p class="mb-2"><a href="/">Voir toutes nos offres</a></p>
-  <a href="/new">Publier une offre</a>
+  <h3>You have been subscribed !</h3>
+  <p class="mb-2"><a href="/">See all job offers</a></p>
+  <a href="/new">Post a job</a>
 </body>
 </html>
